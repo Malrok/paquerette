@@ -5,6 +5,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.content.Context;
 
 import com.mrk.oglext.renderers.GLRenderer;
+import com.mrk.oglext.resources.Graphics;
 
 public class MRKOGL {
 
@@ -12,6 +13,7 @@ public class MRKOGL {
 	
 	public static GLRenderer renderer;
 	public static GL10 gl10;
+	public static Graphics graphics;
 	
 	public static MRKOGL getInstance() {
 		return instance;

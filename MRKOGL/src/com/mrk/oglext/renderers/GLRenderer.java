@@ -79,7 +79,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 //		bottomRight = GetWorldCoords(new float[]{screenW ,screenH});
 		
 //		scene.draw(gl);
-		itf.render(gl);
+		if (itf != null) itf.render(gl);
 	}
 	
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
