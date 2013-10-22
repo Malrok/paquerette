@@ -3,13 +3,13 @@ package com.mrk.bubbles;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 
+import com.mrk.bubbles.Components.DimensionComponent;
+import com.mrk.bubbles.Components.PositionComponent;
+import com.mrk.bubbles.Components.RenderableComponent;
+import com.mrk.bubbles.Components.TextureComponent;
 import com.mrk.bubbles.Systems.GraphicsSystem;
 import com.mrk.entitysystem.World;
 import com.mrk.entitysystem.metas.MetaEntity;
-import com.mrk.framework.basecomponents.DimensionComponent;
-import com.mrk.framework.basecomponents.PositionComponent;
-import com.mrk.framework.basecomponents.RenderableComponent;
-import com.mrk.framework.basecomponents.TextureComponent;
 
 public class GameWorld extends World {
 	
