@@ -11,9 +11,9 @@ public class MRKOGL {
 
 	private static MRKOGL instance = new MRKOGL();
 	
-	public static GLRenderer renderer;
-	public static GL10 gl10;
-	public static Graphics graphics;
+	public GLRenderer renderer;
+	public GL10 gl10;
+	public Graphics graphics = new Graphics();
 	
 	public static MRKOGL getInstance() {
 		return instance;

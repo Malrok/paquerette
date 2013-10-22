@@ -20,9 +20,9 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
 	private GLView glView;
 	private GameTick gameTick;
 	
-	public MRKOGLActivity() {
-		create();
-	}
+//	public MRKOGLActivity() {
+//		
+//	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
         }; 
         gameTick.sendMessage(new Message());
         
-        
+        create();
 	}
 	
 	@Override

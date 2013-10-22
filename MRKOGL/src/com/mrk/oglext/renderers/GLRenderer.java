@@ -50,6 +50,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 //	}
 	
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+		MRKOGL.getInstance().gl10 = gl;
 		// Set the background color to black ( rgba ).
 		gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
 		// Enable Smooth Shading, default not really needed.
@@ -65,8 +66,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 	}
 
 	public void onDrawFrame(GL10 gl) {
-//		this.gl = gl;
-		MRKOGL.gl10 = gl;
+//		MRKOGL.getInstance().gl10 = gl;
 		// Clears the screen and depth buffer.
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 		// Replace the current matrix with the identity matrix
@@ -132,12 +132,12 @@ public class GLRenderer implements GLSurfaceView.Renderer {
         MatrixGrabber mg = new MatrixGrabber();  
         
 		//and them, call the getCurrentModelView() for the ModelView matrix:  
-		mg.getCurrentModelView(MRKOGL.gl10);  
+		mg.getCurrentModelView(MRKOGL.getInstance().gl10);  
 		//values are stored at the mg.mModelView array, so:  
 //		Log.i("Translation Z value", Float.toString(mg.mModelView[14]));//prints the current translation z value  
 		    
 		//to get the current Projection matrix:  
-		mg.getCurrentProjection(MRKOGL.gl10);  
+		mg.getCurrentProjection(MRKOGL.getInstance().gl10);  
 		//values are stored at the mProjection, so:  
 //		Log.i("First projection matrix value", Float.toString(mg.mProjection[0]));//prints the first projection matrix value  
         

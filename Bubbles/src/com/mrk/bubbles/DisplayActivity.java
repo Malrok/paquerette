@@ -10,6 +10,7 @@ public class DisplayActivity extends MRKOGLActivity {
 	@Override
 	public void create() {
 		world = new GameWorld();
+		world.init(this);
 	}
 	
 	@Override

@@ -27,7 +27,7 @@ public class GLView extends GLSurfaceView {
         
 //        renderer = new GLRenderer(context);
         MRKOGL.getInstance().init(context);
-        setRenderer(MRKOGL.renderer);
+        setRenderer(MRKOGL.getInstance().renderer);
         // Render the view only when there is a change
         setRenderMode(GLView.RENDERMODE_WHEN_DIRTY);
     }
@@ -37,7 +37,7 @@ public class GLView extends GLSurfaceView {
 //        renderer = new GLRenderer(context);
 //        setRenderer(renderer);
     	MRKOGL.getInstance().init(context);
-        setRenderer(MRKOGL.renderer);
+        setRenderer(MRKOGL.getInstance().renderer);
         // Render the view only when there is a change
         setRenderMode(GLView.RENDERMODE_WHEN_DIRTY);
     }

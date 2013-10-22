@@ -12,6 +12,6 @@ public class TextureComponent implements Component {
 	public int texture;
 	
 	public TextureComponent(Bitmap bitmap) {
-		texture = MRKOGL.graphics.loadTexture(bitmap);
+		texture = MRKOGL.getInstance().graphics.loadTexture(bitmap);
 	}
 }
