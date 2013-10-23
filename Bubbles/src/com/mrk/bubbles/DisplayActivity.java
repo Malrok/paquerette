@@ -1,5 +1,7 @@
 package com.mrk.bubbles;
 
+import javax.microedition.khronos.opengles.GL10;
+
 import com.mrk.framework.activities.MRKOGLActivity;
 
 
@@ -10,11 +12,15 @@ public class DisplayActivity extends MRKOGLActivity {
 	@Override
 	public void create() {
 		world = new GameWorld();
-		world.init(this);
 	}
 	
 	@Override
 	public void drawFrame() {
 		world.processOneGameTick(0);
+	}
+	
+	@Override
+	public void createGL(GL10 gl) {
+		world.init(this);
 	}
 }

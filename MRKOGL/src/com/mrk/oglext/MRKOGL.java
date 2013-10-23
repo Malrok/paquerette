@@ -12,7 +12,7 @@ public class MRKOGL {
 	private static MRKOGL instance = new MRKOGL();
 	
 	public GLRenderer renderer;
-	public GL10 gl10;
+	public GL10 gl;
 	public Graphics graphics = new Graphics();
 	
 	public static MRKOGL getInstance() {

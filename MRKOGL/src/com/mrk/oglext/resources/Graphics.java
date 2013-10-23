@@ -14,7 +14,7 @@ public class Graphics {
 	
 	public int loadTexture(Bitmap bitmap) {
 		int newKey = getNewKey();
-		textures.append(newKey, new Texture(bitmap, MRKOGL.getInstance().gl10));
+		textures.append(newKey, new Texture(bitmap, MRKOGL.getInstance().gl));
 		return newKey;
 	}
 	
