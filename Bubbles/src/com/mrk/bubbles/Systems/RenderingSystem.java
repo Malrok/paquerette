@@ -19,7 +19,7 @@ public class RenderingSystem extends SubSystem {
 		for (UUID entity : entityManager.getAllEntitiesPossessingComponent(TextureComponent.class)) {
 			meta = MetaEntity.loadFromEntityManager(entity);
 			if (meta.has(PositionComponent.class) && meta.has(DimensionComponent.class))
-				GraphicsHelper.drawTexture(MRKOGL.getInstance().graphics.getTexture(meta.get(TextureComponent.class).texture), meta.get(PositionComponent.class).x, meta.get(PositionComponent.class).y, 0f, 0f, 0f, 0f);
+				GraphicsHelper.drawTexture(MRKOGL.getInstance().graphics.getTexture(meta.get(TextureComponent.class).texture), meta.get(PositionComponent.class).x, meta.get(PositionComponent.class).y, 1f, 0f, 0f, 0f);
 		}
 	}
 

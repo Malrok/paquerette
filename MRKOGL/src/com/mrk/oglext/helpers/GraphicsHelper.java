@@ -24,10 +24,9 @@ public class GraphicsHelper {
 			Log.d("GraphicsHelper.drawTexture", "No OGL context");
 			return;
 		}
-		if (texture.mShouldLoadTexture) {
-			Log.d("GraphicsHelper.drawTexture", "should load texture");
-			texture.loadGLTexture(MRKOGL.getInstance().gl);
-		}
+		if (texture.mShouldLoadTexture) texture.loadGLTexture(MRKOGL.getInstance().gl);
+		
+		Log.d("GraphicsHelper.drawTexture", "drawing");
 		
 		init();
 		

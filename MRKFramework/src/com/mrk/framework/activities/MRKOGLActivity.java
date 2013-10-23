@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.mrk.framework.R;
+import com.mrk.oglext.MRKOGL;
 import com.mrk.oglext.tools.GameTick;
 import com.mrk.oglext.views.GLView;
 
@@ -19,10 +20,6 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
 
 	private GLView glView;
 	private GameTick gameTick;
-	
-//	public MRKOGLActivity() {
-//		
-//	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,11 +43,12 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
         	
         });
         
+		MRKOGL.getInstance().renderer.setInterface(this);
+        
         gameTick = new GameTick(42) { // 25 frames per second
         	
         	@Override
         	public void doOnTick() {
-        		drawFrame();
         		glView.requestRender();
         	}
         	
@@ -74,9 +72,6 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
 
 	@Override
 	public void create() { };
-	
-	@Override
-	public void drawFrame() { }
 
 	@Override
 	public void createGL(GL10 gl) { }

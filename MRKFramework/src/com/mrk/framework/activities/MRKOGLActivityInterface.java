@@ -6,6 +6,4 @@ public interface MRKOGLActivityInterface extends GLRendererInterface {
 
 	public void create();
 	
-	public void drawFrame();
-	
 }
