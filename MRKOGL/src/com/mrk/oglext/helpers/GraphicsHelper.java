@@ -80,14 +80,6 @@ public class GraphicsHelper {
 //		// Disable face culling.
 //		MRKOGL.getInstance().gl.glDisable(GL10.GL_CULL_FACE);
 		
-		// bind the previously generated texture
-		gl.glBindTexture(GL10.GL_TEXTURE_2D, texture.getTexturePointer());
-
-		gl.glTranslatef(x, y, z);
-		gl.glRotatef(rx, 1, 0, 0);
-		gl.glRotatef(ry, 0, 1, 0);
-		gl.glRotatef(rz, 0, 0, 1);
-		
 		// Point to our buffers
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
@@ -98,6 +90,16 @@ public class GraphicsHelper {
 		// Point to our vertex buffer
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, texture.getVertexBuffer());
 		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, texture.getTextureBuffer());
+		
+		// bind the previously generated texture
+		gl.glBindTexture(GL10.GL_TEXTURE_2D, texture.getTexturePointer());
+
+		gl.glLoadIdentity();
+		
+		gl.glTranslatef(x, y, z);
+		gl.glRotatef(rx, 1, 0, 0);
+		gl.glRotatef(ry, 0, 1, 0);
+		gl.glRotatef(rz, 0, 0, 1);
 		
 		// Draw the vertices as triangle strip
 		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, texture.getVertices().length / 3);

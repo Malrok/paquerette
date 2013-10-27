@@ -48,11 +48,9 @@ public class Texture {
 	}
 	
 	public void loadGLTexture(GL10 gl, Bitmap bitmap) {
-		int[] textures = new int[1];
-		
 		// generate one texture pointer
+		int[] textures = new int[1];
 		gl.glGenTextures(1, textures, 0);
-		
 		texturePointer = textures[0];
 		
 		// ...and bind it to our array

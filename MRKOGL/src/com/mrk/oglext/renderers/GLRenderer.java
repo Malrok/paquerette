@@ -89,9 +89,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		// Clears the screen and depth buffer.
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 		// Replace the current matrix with the identity matrix
-		gl.glLoadIdentity();
+//		gl.glLoadIdentity();
 		// Translates 4 units into the screen.
-		gl.glTranslatef(0, 0, -4); 
+//		gl.glTranslatef(0, 0, -4);
 		// Draw our scene.
 
 		// Enables alpha on textures
