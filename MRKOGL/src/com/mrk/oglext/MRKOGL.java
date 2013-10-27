@@ -4,8 +4,8 @@ import javax.microedition.khronos.opengles.GL10;
 
 import android.content.Context;
 
-import com.mrk.oglext.renderers.GLRenderer;
-import com.mrk.oglext.resources.Graphics;
+import com.mrk.oglext.tools.GLRenderer;
+import com.mrk.oglext.tools.Graphics;
 
 public class MRKOGL {
 

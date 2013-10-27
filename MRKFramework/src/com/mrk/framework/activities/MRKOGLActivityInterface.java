@@ -1,6 +1,6 @@
 package com.mrk.framework.activities;
 
-import com.mrk.oglext.renderers.GLRendererInterface;
+import com.mrk.oglext.tools.GLRendererInterface;
 
 public interface MRKOGLActivityInterface extends GLRendererInterface {
 

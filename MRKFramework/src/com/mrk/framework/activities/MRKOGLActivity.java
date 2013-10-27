@@ -79,6 +79,6 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
 	public void createGL(GL10 gl) { }
 	
 	@Override
-	public void render(GL10 gl) { }
+	public void render(GL10 gl, int lastFrameDuration) { }
 
 }

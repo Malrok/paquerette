@@ -3,7 +3,7 @@ package com.mrk.bubbles;
 import javax.microedition.khronos.opengles.GL10;
 
 import com.mrk.framework.activities.MRKOGLActivity;
-import com.mrk.oglext.renderers.GLRendererInterface;
+import com.mrk.oglext.tools.GLRendererInterface;
 
 
 public class DisplayActivity extends MRKOGLActivity implements GLRendererInterface {
@@ -21,7 +21,7 @@ public class DisplayActivity extends MRKOGLActivity implements GLRendererInterfa
 	}
 	
 	@Override
-	public void render(GL10 gl) { 
-		world.processOneGameTick(0);
+	public void render(GL10 gl, int lastFrameDuration) { 
+		world.processOneGameTick(lastFrameDuration);
 	}
 }
