@@ -16,7 +16,6 @@ import com.mrk.oglext.tools.MatrixGrabber;
 
 public class GLRenderer implements GLSurfaceView.Renderer {
 
-//	private Scene scene;
 	private GLRendererInterface itf;
 	
     private int screenW;
@@ -28,8 +27,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     private float[] worldPos = new float[2];
 	
 	public GLRenderer(Context context) {
-//		this.scene = new Scene();
-		
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		WindowManager wm = (WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
 		wm.getDefaultDisplay().getMetrics(displayMetrics);
@@ -40,36 +37,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 	public void setInterface(GLRendererInterface itf) {
 		this.itf = itf;
 	}
-	
-//	public void setScene(Scene scene, Activity activity) {
-//		this.scene = scene;
-//	}
-//	
-//	public Scene getScene() {
-//		return scene;
-//	}
-	
-//	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-//		MRKOGL.getInstance().gl = gl;
-//		// Set the background color to black ( rgba ).
-//		gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
-//		// Enable Smooth Shading, default not really needed.
-//		gl.glShadeModel(GL10.GL_SMOOTH);
-//		// Depth buffer setup.
-//		gl.glClearDepthf(1.0f);
-//		// Enables depth testing.
-//		gl.glEnable(GL10.GL_DEPTH_TEST);
-//		// The type of depth testing to do.
-//		gl.glDepthFunc(GL10.GL_LEQUAL);
-//		// Really nice perspective calculations.
-//		gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST);
-//		
-//		if (itf != null) itf.createGL(gl);
-//	}
 
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-//		// Load the texture for the square
-//		square.loadGLTexture(gl, this.context);
+		MRKOGL.getInstance().gl = gl;
 		
 		gl.glEnable(GL10.GL_TEXTURE_2D);			//Enable Texture Mapping ( NEW )
 		gl.glShadeModel(GL10.GL_SMOOTH); 			//Enable Smooth Shading
