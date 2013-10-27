@@ -11,7 +11,6 @@ import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.mrk.framework.R;
 import com.mrk.oglext.MRKOGL;
 import com.mrk.oglext.tools.GameTick;
 import com.mrk.oglext.views.GLView;
@@ -30,10 +29,11 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
                                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.display_activity_layout);
-        
         /* create GL View */
-        glView = (GLView)findViewById(R.id.glsurface);
+        glView = new GLView(this);
+        
+        setContentView(glView);
+        
         glView.setOnTouchListener(new OnTouchListener() {
 
 			@Override
@@ -62,12 +62,14 @@ public class MRKOGLActivity extends Activity implements MRKOGLActivityInterface 
 	public void onResume() {
 		super.onResume();
 		glView.onResume();
+		gameTick.resume();
 	}
 	
 	@Override 
 	public void onPause() {
 		super.onPause();
 		glView.onPause();
+		gameTick.pause();
 	}
 
 	@Override

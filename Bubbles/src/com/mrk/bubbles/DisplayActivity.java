@@ -3,6 +3,7 @@ package com.mrk.bubbles;
 import javax.microedition.khronos.opengles.GL10;
 
 import com.mrk.framework.activities.MRKOGLActivity;
+import com.mrk.oglext.MRKOGL;
 import com.mrk.oglext.renderers.GLRendererInterface;
 
 
@@ -17,6 +18,8 @@ public class DisplayActivity extends MRKOGLActivity implements GLRendererInterfa
 	
 	@Override
 	public void createGL(GL10 gl) {
+		MRKOGL.getInstance().gl = gl;
+		
 		world.init(this);
 	}
 	

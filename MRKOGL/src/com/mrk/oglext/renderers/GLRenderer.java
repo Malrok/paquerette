@@ -49,32 +49,49 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 //		return scene;
 //	}
 	
+//	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+//		MRKOGL.getInstance().gl = gl;
+//		// Set the background color to black ( rgba ).
+//		gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
+//		// Enable Smooth Shading, default not really needed.
+//		gl.glShadeModel(GL10.GL_SMOOTH);
+//		// Depth buffer setup.
+//		gl.glClearDepthf(1.0f);
+//		// Enables depth testing.
+//		gl.glEnable(GL10.GL_DEPTH_TEST);
+//		// The type of depth testing to do.
+//		gl.glDepthFunc(GL10.GL_LEQUAL);
+//		// Really nice perspective calculations.
+//		gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST);
+//		
+//		if (itf != null) itf.createGL(gl);
+//	}
+
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-		MRKOGL.getInstance().gl = gl;
-		// Set the background color to black ( rgba ).
-		gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
-		// Enable Smooth Shading, default not really needed.
-		gl.glShadeModel(GL10.GL_SMOOTH);
-		// Depth buffer setup.
-		gl.glClearDepthf(1.0f);
-		// Enables depth testing.
-		gl.glEnable(GL10.GL_DEPTH_TEST);
-		// The type of depth testing to do.
-		gl.glDepthFunc(GL10.GL_LEQUAL);
-		// Really nice perspective calculations.
-		gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST);
+//		// Load the texture for the square
+//		square.loadGLTexture(gl, this.context);
 		
+		gl.glEnable(GL10.GL_TEXTURE_2D);			//Enable Texture Mapping ( NEW )
+		gl.glShadeModel(GL10.GL_SMOOTH); 			//Enable Smooth Shading
+		gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f); 	//Black Background
+		gl.glClearDepthf(1.0f); 					//Depth Buffer Setup
+		gl.glEnable(GL10.GL_DEPTH_TEST); 			//Enables Depth Testing
+		gl.glDepthFunc(GL10.GL_LEQUAL); 			//The Type Of Depth Testing To Do
+		
+		//Really Nice Perspective Calculations
+		gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST); 
 		if (itf != null) itf.createGL(gl);
 	}
 
+	
 	public void onDrawFrame(GL10 gl) {
 //		MRKOGL.getInstance().gl10 = gl;
 		// Clears the screen and depth buffer.
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 		// Replace the current matrix with the identity matrix
-//		gl.glLoadIdentity();
+		gl.glLoadIdentity();
 		// Translates 4 units into the screen.
-//		gl.glTranslatef(0, 0, -4); 
+		gl.glTranslatef(0, 0, -4); 
 		// Draw our scene.
 
 //		topLeft = GetWorldCoords(new float[]{0,0});
