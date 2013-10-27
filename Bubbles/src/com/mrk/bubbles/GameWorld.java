@@ -28,7 +28,7 @@ public class GameWorld extends World {
 		entity1 = new MetaEntity();
 		entity1.add(new PositionComponent(1,0));
 		entity1.add(new TextureComponent(BitmapFactory.decodeResource(context.getResources(), R.drawable.canardage_lapin)));
-		entity1.add(new DimensionComponent(1,1));
+		entity1.add(new DimensionComponent(2,2));
 	}
 	
 }

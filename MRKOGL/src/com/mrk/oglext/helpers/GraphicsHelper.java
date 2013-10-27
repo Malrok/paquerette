@@ -2,6 +2,7 @@ package com.mrk.oglext.helpers;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import com.mrk.oglext.components.Dimension;
 import com.mrk.oglext.components.Texture;
 
 public class GraphicsHelper {
@@ -16,7 +17,7 @@ public class GraphicsHelper {
 	 * @param ry - rotatey
 	 * @param rz - rotatez
 	 */
-	public static void drawTexture(GL10 gl, Texture texture, float x, float y, float z, float rx, float ry, float rz) {
+	public static void drawTexture(GL10 gl, Texture texture, Dimension dimension, float x, float y, float z, float rx, float ry, float rz) {
 //		// Counter-clockwise winding.
 //		gl.glFrontFace(GL10.GL_CCW);
 //		// Enable face culling.
@@ -88,7 +89,7 @@ public class GraphicsHelper {
 		gl.glFrontFace(GL10.GL_CW);
 		
 		// Point to our vertex buffer
-		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, texture.getVertexBuffer());
+		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, dimension.getVertexBuffer());
 		gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, texture.getTextureBuffer());
 		
 		// bind the previously generated texture
@@ -102,7 +103,7 @@ public class GraphicsHelper {
 		gl.glRotatef(rz, 0, 0, 1);
 		
 		// Draw the vertices as triangle strip
-		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, texture.getVertices().length / 3);
+		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, dimension.getVertices().length / 3);
 
 		//Disable the client state before leaving
 		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);

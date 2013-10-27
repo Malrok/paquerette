@@ -10,14 +10,14 @@ import android.graphics.Bitmap;
 import android.opengl.GLUtils;
 
 public class Texture {
-	private FloatBuffer vertexBuffer;	// buffer holding the vertices
-	
-	private float vertices[] = {
-			-1.0f, -1.0f,  0.0f,		// V1 - bottom left
-			-1.0f,  1.0f,  0.0f,		// V2 - top left
-			 1.0f, -1.0f,  0.0f,		// V3 - bottom right
-			 1.0f,  1.0f,  0.0f			// V4 - top right
-	};
+//	private FloatBuffer vertexBuffer;	// buffer holding the vertices
+//	
+//	private float vertices[] = {
+//			-1.0f, -1.0f,  0.0f,		// V1 - bottom left
+//			-1.0f,  1.0f,  0.0f,		// V2 - top left
+//			 1.0f, -1.0f,  0.0f,		// V3 - bottom right
+//			 1.0f,  1.0f,  0.0f			// V4 - top right
+//	};
 	
 	private FloatBuffer textureBuffer;	// buffer holding the texture coordinates
 	private float texture[] = {    		
@@ -32,13 +32,13 @@ public class Texture {
 	private int texturePointer = -1;
 
 	public Texture(GL10 gl, Bitmap bitmap) {
-		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(vertices.length * 4); 
-		byteBuffer.order(ByteOrder.nativeOrder());
-		vertexBuffer = byteBuffer.asFloatBuffer();
-		vertexBuffer.put(vertices);
-		vertexBuffer.position(0);
+//		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(vertices.length * 4); 
+//		byteBuffer.order(ByteOrder.nativeOrder());
+//		vertexBuffer = byteBuffer.asFloatBuffer();
+//		vertexBuffer.put(vertices);
+//		vertexBuffer.position(0);
 
-		byteBuffer = ByteBuffer.allocateDirect(texture.length * 4);
+		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(texture.length * 4);
 		byteBuffer.order(ByteOrder.nativeOrder());
 		textureBuffer = byteBuffer.asFloatBuffer();
 		textureBuffer.put(texture);
@@ -71,15 +71,15 @@ public class Texture {
 		return texturePointer;
 	}
 	
-	public FloatBuffer getVertexBuffer() {
-		return vertexBuffer;
-	}
+//	public FloatBuffer getVertexBuffer() {
+//		return vertexBuffer;
+//	}
 	
 	public FloatBuffer getTextureBuffer() {
 		return textureBuffer;
 	}
 	
-	public float[] getVertices() {
-		return vertices;
-	}
+//	public float[] getVertices() {
+//		return vertices;
+//	}
 }
