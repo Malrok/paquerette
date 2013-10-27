@@ -15,7 +15,7 @@ public class Dimension {
 				-width / 2, -height / 2,  0.0f,		// V1 - bottom left
 				-width / 2,  height / 2,  0.0f,		// V2 - top left
 				 width / 2, -height / 2,  0.0f,		// V3 - bottom right
-				 width / 2,  height / 2,  0.0f			// V4 - top right
+				 width / 2,  height / 2,  0.0f		// V4 - top right
 		};
 		
 		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(vertices.length * 4); 

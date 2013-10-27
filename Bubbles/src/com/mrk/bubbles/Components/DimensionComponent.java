@@ -10,6 +10,10 @@ public class DimensionComponent implements Component {
 	public Dimension dimension;
 	
 	public DimensionComponent(float width, float height) {
+		setDimensions(width, height);
+	}
+	
+	public void setDimensions(float width, float height) {
 		dimension = new Dimension(width, height);
 	}
 }
